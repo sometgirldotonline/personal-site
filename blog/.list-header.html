@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../styles.css">
+<meta no-bg="true" rows-buttons center-page-contents>
+<h1>Blog Posts</h1>
+<details>
+    <summary>Filters & Sorting</summary>
+    <form action="" method="get">
+        <table class="normal-table">
+            <tbody>
+                <tr>
+                    <td><b>Display Mode: </b></td>
+                    <td><select id=display name="F">
+                            <option value="0">Plain List</option>
+                            <option value="1" selected="selected">Table</option>
+                            <option value="2" selected="selected">Cards</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><b>Sort By:</b></td>
+                    <td> <select name="C">
+                            <option value="N" selected="selected"> Name</option>
+                            <option value="M"> Date Modified</option>
+                            <option value="S"> Size</option>
+                            <option value="D"> Description</option>
+                        </select><select name="O">
+                            <option value="A" selected="selected"> Ascending</option>
+                            <option value="D"> Descending</option>
+                        </select></td>
+                </tr>
+                <tr><td><b>Wildcard filter: </b></td><td><input type="text" name="P" value="*" /></td></tr>
+            </tbody>
+        </table>
+        <input type="submit" name="X" value="Go" />
+    </form>
+</details>
+
+<link rel="stylesheet" href=".list.css">
+<!-- <base target="content-frame"> -->

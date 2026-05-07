@@ -1,0 +1,2 @@
+# Add this to your .htaccess file
+SetEnvIf REQUEST_URI "^/personal-site/blog/(.*)$" CLEAN_PATH=$1

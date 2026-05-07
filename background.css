@@ -1,0 +1,12 @@
+html:has(meta[hearts-bg]) body{
+  --s: 53px; /* control the size*/
+  --c1: #febcd3;
+  --c2: #fed7e5;
+
+  --_g: 80%, var(--c1) 25.4%, #0000 26%;
+  background: radial-gradient(at 80% var(--_g)),
+    radial-gradient(at 20% var(--_g)),
+    conic-gradient(from -45deg at 50% 41%, var(--c1) 90deg, var(--c2) 0)
+      calc(var(--s) / 2) 0;
+  background-size: var(--s) var(--s);
+}

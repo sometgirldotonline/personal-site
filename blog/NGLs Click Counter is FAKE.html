@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please, don't build your sites like this.</title>
+</head>
+
+<body>
+    <!--#include virtual=".post-header.html" -->
+    <h1 id="ngls-click-counter-is-fake">NGL&#39;s click counter is FAKE.</h1>
+    <h3 id="please-dont-build-your-sites-like-this"><i>Please, don&#39;t build your sites like this.</i></h3>
+    <i><b>Originally posted: </b>2025-02-24</i>
+    <blockquote>
+        <p>warning: some profanity is used in this post</p>
+    </blockquote>
+    <p>I was messing around with NGL.LINK and noticed a little counter:
+        <br>
+        <img src="../blog-assets/NGL-Fake-Counter/ngl-screenshot.png"
+            alt="Webpage showing a checkbox and &quot;Sent! 👇 532 people just tapped the button 👇; Button labeled: Get your own messages; Hyperlink labeled Send another Message&quot; ">
+        <br>This counter intrigued me, so i popped open inspector, and what do you fucking know, there's no data.
+        This is the code snippet we are interested in:
+    </p>
+    <pre class="language-js"
+        tabindex="0"><code class="language-js">  <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> clickCount <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.clickCount'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    clickCount <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> 
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.clickCount'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>clickCount<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">800</span><span class="token punctuation">)</span></code></pre>
+    <p>The setInterval line is the start of a recurring timer, if you look to the end you'll see it says
+        &quot;800&quot;, so every 800ms we re-run the code. What does the code do though? It first, pulls in the text of
+        the <code>.clickCount</code> HTML item, which is the counter, then it uses <code>parseInt</code>, a function
+        that, if a string is only a number, turns it into a proper integer so we can perform mathematical operations on
+        it, after that we save it as clickCount (a variable) in the next line down we increment clickCount (the
+        variable) by <code>Math.floor(Math.random() * 5) - 1</code>, what exactly does this mean? First, we run
+        Math.Random (order of operations and all that jazz), this throws an output like this:<br>
+        <img src="../blog-assets/NGL-Fake-Counter/mathrandom.png"
+            alt="Math.random in firefox console, yielded 0.19502641876331384"><br>
+        We then multiply that by 5, so it atleast, some of the time is at-least 1, we then floor it which basically
+        strips away the decimal values, and then subtract by one at some points, which could theoretically be dangerous
+        if it ends up being a 0.9999 or whatever which means it would take an item away, finally we write this value
+        back to the element, rinse and repeat.
+        I leave you with one thing:
+    </p>
+    <h2 id="an-addendum-unclicking">An Addendum: Unclicking?</h2>
+    <p>I noticed this code has the possibility to SUBTRACT from the counter, so i ran it manually, interestingly NodeJS
+        and my browser (firefox) reported different answers, see for yourself.
+        Ignore the <code>void</code> function wrapping it in node, for some reason node likes printing extra garbage and
+        i had to <code>void</code> the trash.</p>
+    <h3 id="nodejs">NodeJS</h3>
+    <p><img src="../blog-assets/NGL-Fake-Counter/nodejs-test.png"
+            alt="Script in nodeJS showing it switching between -1, 0, 2, 3 when using random and a bit of math."><br>
+        Node seems to have a habit of rolling zeros and negative values, which when negatives are rolled, it would seem
+        like a user &quot;unclicked&quot; the button.</p>
+    <h3 id="firefox">Firefox</h3>
+    <p><img src="../blog-assets/NGL-Fake-Counter/fftest.png"
+            alt="Same script in firefox only yields positive, nonzero numbers"><br></p>
+    <p>Ok, but WHY THE FUCK IS NODE ACTING DIFFERENT TO FIREFOX???
+        Now I gotta test it in Chrome &gt;:3</p>
+    <h2 id="addendum-2-electric-boogaloo-2026-02-23">Addendum 2: Electric Boogaloo (2026-02-23)</h2>
+    <p>Just found a backup of my old site and had to put this post back up.</p>
+    <p>Also fuck you if you have any of the following on your site:</p>
+    <ul>
+        <li>Fake countdown timers</li>
+        <li>Fake scarcity information</li>
+        <li>And ofc fake click counters.</li>
+    </ul>
+</body>
+
+</html>

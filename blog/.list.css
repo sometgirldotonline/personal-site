@@ -1,0 +1,85 @@
+.indexhead,
+.indexbreakrow,
+address,
+html:not(:has(meta[sub-dir])) table:not(.normal-table) tr.even:nth-child(3),
+.indexcolsize {
+    display: none !important;
+}
+
+details {
+    background-color: #fed7e5;
+    height: fit-content !important;
+    padding: 10px;
+    overflow: visible;
+    height: fit-content !important;
+    width: 70vw;
+    margin-bottom: 10px;
+    align-items: center;
+    border: var(--w9xBorder-Thickness) outset;
+    border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br) var(--w9xBorderC-tl);
+}
+form{
+    margin-block-end: 0;
+}
+table a{
+    color: #000;
+    text-decoration: none;
+}
+table a:active{
+    color: #fed7e5
+}
+table:not(.normal-table) tr {
+    display: block;
+    gap: 8px;
+    height: fit-content !important;
+    padding: 10px;
+    overflow: visible;
+    height: fit-content !important;
+    min-height: 70px;
+    width: 70vw;
+    margin-bottom: 10px;
+    align-items: center;
+    /* Keeps text aligned with the icon center */
+}
+
+.indexcolicon {
+    display: inline-block;
+    float: left;
+}
+
+.indexcolicon img {
+    height: 40px;
+    /* Or your preferred fixed height */
+    width: auto;
+    display: block;
+}
+
+.indexcolname {
+    display: inline-block;
+
+}
+
+.indexcolname a {
+    margin-top: -13px;
+    position: absolute;
+    width: 70vw;
+    padding-top: 11px;
+    padding-left: 58px;
+    padding-bottom: 35px;
+    margin-left: -50px;
+    display: block;
+    z-index: 9999;
+}
+
+.indexcoldesc {
+    display: block;
+    margin-top: 20px;
+    padding-left: 48px;
+
+}
+
+.indexcollastmod {
+    text-align: right;
+    float: right;
+    translate: 0px -5px;
+}

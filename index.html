@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Lily's Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta disable-scrolling hearts-bg root-page center-page-contents>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="draggable.js"></script>
+</head>
+
+<body>
+  <main class="draggable">
+    <span class="title dragger">Lily's Site</span>
+    <div class="tabbar"><a class="tab" href="#about">About Me</a><a class="tab" href="#blog">Blog</a><a class="tab"
+        href="#contact" title="Because you want to talk to me for some reason?">Contact</a>
+    </div>
+    <div class="win-content">
+      <div class="area" id="about">
+        <p>Haii, I'm <i>Lily</i>, I'm an awfully stereotypical transfem, here's a list of my hobbies
+        </p>
+        <ul>
+          <li>Programming</li>
+          <li>UI design</li>
+          <li>Video editing</li>
+          <li><span class="huh">cosplaying as a</span>Sysadmin</li>
+        </ul>
+        <p>
+          I also am currently learning to draw (I use Krita / Magma on a Framework 12 with the stylus!), and am planning
+          to learn to make music using either Ardour or LMMS!
+        </p>
+        <h3><i>My Socials!</i></h3>
+        <div class="socials">
+          <a href="https://bsky.app/profile/sometgirl.online"><img src="icons/bsky.png" alt="Bluesky Logo">
+            @sometgirl.online on BlueSky</a><br>
+          <a href="https://youtube.com/@sometgirldotonline"><img src="icons/youtube.png" alt="YouTube Logo">
+            @sometgirldotonline on YouTube</a><br>
+          <a href="https://github.com/sometgirldotonline"><img src="icons/github.png" alt="GitHub Logo">
+            @sometgirldotonline on GitHub</a><br>
+        </div>
+        <hr>
+        <img src="88x31/acceptancenow.png" alt="">
+        <img src="88x31/autism.gif" alt="">
+        <img src="88x31/css-is-diff.gif" alt="">
+        <img src="88x31/firefoxnow.gif" alt="">
+        <img src="88x31/funny.gif" alt="">
+        <img src="88x31/hackclub.webp" alt="">
+        <img src="88x31/hl.gif" alt="">
+        <img src="88x31/mikufan.png" alt="">
+        <img src="88x31/paws.png" alt="">
+        <img src="88x31/piracy.gif" alt="">
+        <img src="88x31/ppr.png" alt="">
+        <img src="88x31/pronouns_sheher.gif" alt="">
+        <img src="88x31/redbigz.png" alt="">
+        <img src="88x31/socks.png" alt="">
+        <img src="88x31/transyourgender_button.gif" alt="">
+        <img src="88x31/ublock.png" alt="">
+        <img src="88x31/vocaloid.png" alt="">
+        <img src="88x31/anythingbut.webp" alt="">
+        <img src="88x31/bad_apple.avif" alt="">
+        <img src="88x31/floof-explode.gif" alt="">
+        <img src="88x31/gnu-linux.webp" alt="">
+        <img src="88x31/microhate.jpg" alt="">
+        <img src="88x31/shrek-movie.avif" alt="">
+        <img src="88x31/trans.webp" alt="">
+        <img src="88x31/trn.png" alt="">
+        <img src="88x31/tom-scott.webp" alt="">
+        <img src="88x31/yeepee.avif" alt="">
+        <img src="88x31.png" alt="">
+        <br>
+        <big><i>my 88x31!!</i></big><br>
+        <img src="88x31.png" alt=""><br>
+        <textarea readonly>
+<a href="https://sometgirl.online"><img src="https://sometgirl.online/88x31.png"/></a>
+        </textarea>
+      </div>
+      <div id="blog" class="area">
+        <!--#if expr="-n v('QUERY_STRING')" -->
+        <iframe src="<!--#echo var="REQUEST_SCHEME" -->://<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/<!--#echo var="QUERY_STRING" -->" class="areaframe" frameborder="0"></iframe>
+        <!--#else -->
+        <iframe src="blog" class="areaframe" frameborder="0"></iframe>
+        <!--#endif -->
+
+
+
+      </div>
+      <div id="contact" class="area">contact</div>
+    </div>
+    <div class="buttons">
+      <button>OK</button>
+      <button>Cancel</button>
+      <button>Apply</button>
+    </div>
+  </main>
+  <!-- Maybe another day, my beloved -->
+  <!-- <main id="blog-viewer" class=draggable>
+    <span class="title dragger">Blog Post Viewer</span>
+    <div class="win-content">
+      <div class="area">
+        <iframe class="areaframe" name="content-frame" frameborder="0"
+          srcdoc="<h1>Click a post in the main window to start</h1>"></iframe>
+      </div>
+    </div>
+  </main> -->
+  <div class="taskbar">
+    <!--#config timefmt="%I:%M %p" -->
+    <span class="clock"><img src="icons/98Cal.png" alt=""><img src="icons/98Sound.png"
+        alt=""><!--#echo var="DATE_LOCAL" --></span>
+  </div>
+</body>
+
+</html>
