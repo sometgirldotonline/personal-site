@@ -1,7 +1,7 @@
 .indexhead,
 .indexbreakrow,
 address,
-html:not(:has(meta[sub-dir])) table:not(.normal-table) tr.even:nth-child(3), table:not(.normal-table) tr:has(hr),
+html:not(:has(meta[sub-dir])) table:not(.normal-table) tr:nth-child(3), table:not(.normal-table) tr:has(hr), table:not(.normal-table) tr:has(img[src="/icons/blank.gif"]),
 .indexcolsize {
     display: none !important;
 }

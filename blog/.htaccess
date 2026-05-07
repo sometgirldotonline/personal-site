@@ -1,8 +1,2 @@
-# Enable directory listing
-Options +Indexes
-
-# Point Apache to your custom header file
 HeaderName .list-header.html
-
-# Optional: Clean up the look
 IndexOptions FancyIndexing SuppressHTMLPreamble HTMLTable ScanHTMLTitles SuppressSize TrackModified
