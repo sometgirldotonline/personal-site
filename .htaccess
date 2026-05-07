@@ -1,3 +1,4 @@
-Options +Includes
 AddType text/html .html
 AddOutputFilter INCLUDES .html
+Options +Indexes +Includes
+IndexOptions FancyIndexing HTMLTable
