@@ -284,9 +284,9 @@ body:has(#blog:target) main#blog-viewer{
 }
 
 .taskbar .clock {
-  /* box-shadow: var(--win9xShadowInverse); */
-  border: var(--w9xBorder-Thickness) inset;
-  border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br) var(--w9xBorderC-tl);
+  box-shadow: var(--win9xShadowInverse);
+  /* border: var(--w9xBorder-Thickness) inset; */
+  /* border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br) var(--w9xBorderC-tl); */
 
   width: fit-content;
   height: 100%;
