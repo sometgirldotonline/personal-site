@@ -1,1 +1,2 @@
 My personal site. Built without PHP, and with minimal JS (just for dragging the window). I wanted to see how far I could push built in stuff like SSI and HTACCESS. Turns out, it's pretty far.
+There was some light ai use for debugging the SSI but it was as lost as I am and i gave up quickly and went to reading the very lacking docs. Also helped me figure out the differences in environment between apache on my laptop and on my server.
