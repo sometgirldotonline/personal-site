@@ -98,8 +98,7 @@
       </div>
       <div id="blog" class="area">
         <!--#if expr="-n v('QUERY_STRING')" -->
-        <iframe src="<!--#echo var=" REQUEST_SCHEME"
-          -->://<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/<!--#echo var="QUERY_STRING" -->"
+        <iframe src="//<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/<!--#echo var="QUERY_STRING" -->"
           class="areaframe" frameborder="0"></iframe>
         <!--#else -->
         <iframe src="blog" class="areaframe" frameborder="0"></iframe>

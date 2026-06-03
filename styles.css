@@ -42,7 +42,7 @@ meta[disable-scrolling] {
   overflow: hidden;
 }
 
-main {
+main, dialog {
   width: min(700px, 90vw);
   height: 90vh;
   margin-left: auto;
@@ -59,7 +59,14 @@ main {
   resize: both;
   overflow: hidden;
 }
-
+dialog:not([open]){
+  display: none !important;
+}
+dialog::backdrop{
+  background-color: transparent !important;
+  display:none !important;
+  pointer-events: none;
+}
 .win-content {
   flex: 1;
   min-height: 0;
@@ -73,7 +80,7 @@ main {
   margin-right: 2px;
 }
 
-main>.buttons {
+main>.buttons,dialog > .buttons {
   float: right;
   display: flex;
   gap: 4px;
@@ -85,7 +92,7 @@ main>.buttons {
   margin: 2px;
 }
 
-main .title {
+main .title,dialog .title {
   background-image: linear-gradient(90deg, #fc226e, #b50341);
   width: 100%;
   padding: 5px;
@@ -97,7 +104,7 @@ main .title {
   margin-bottom: 10px;
 }
 
-main .title::after {
+main .title::after,dialog .title:after {
   display: flex;
   content: '×';
   height: 1.2em;
@@ -324,3 +331,4 @@ body:has(meta[pagetype-post]) img:not(a > img) {
   border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br) var(--w9xBorderC-tl);
 
 }
+

@@ -14,11 +14,22 @@ function dragElement(elmnt) {
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
+    
+    // 1. Capture current visual position BEFORE clearing margins
+    const currentLeft = elmnt.offsetLeft;
+    const currentTop = elmnt.offsetTop;
+    
+    // 2. Kill the auto margins completely
+    elmnt.style.margin = "0"; 
+    
+    // 3. Hardcode the position so it does not jump when margins vanish
+    elmnt.style.left = currentLeft + "px";
+    elmnt.style.top = currentTop + "px";
+    
+    // Get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
   }
 

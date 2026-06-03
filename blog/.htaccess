@@ -1,3 +1,4 @@
 HeaderName .list-header.html
 IndexOptions FancyIndexing SuppressHTMLPreamble HTMLTable ScanHTMLTitles SuppressSize TrackModified XHTML xhtml
 IndexStyleSheet "/blog/.list.css"
+AddDescription "All posts related to my hardware hacking" Jailbreaking
