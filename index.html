@@ -98,14 +98,11 @@
       </div>
       <div id="blog" class="area">
         <!--#if expr="-n v('QUERY_STRING')" -->
-        <iframe src="//<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/<!--#echo var="QUERY_STRING" -->"
+        <iframe name="blogframe" src="//<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/<!--#echo var="QUERY_STRING" -->"
           class="areaframe" frameborder="0"></iframe>
         <!--#else -->
-        <iframe src="blog" class="areaframe" frameborder="0"></iframe>
+        <iframe  name="blogframe" src="blog" class="areaframe" frameborder="0"></iframe>
         <!--#endif -->
-
-
-
         </center>
       </div>
       <div id="contact" class="area">
@@ -121,9 +118,8 @@ sometgirl.online@proton.me
       </div>
     </div>
     <div class="buttons">
-      <button>OK</button>
-      <button>Cancel</button>
-      <button>Apply</button>
+        <a href="/blog/" target="blogframe" class="button backbt"><img src="/icons/back.gif" alt="back"
+                    style="margin-right: 5px;"> Back to post list.</a>
     </div>
   </main>
   <!-- Maybe another day, my beloved -->
