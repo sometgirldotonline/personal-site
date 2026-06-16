@@ -1,11 +1,17 @@
-<link rel="stylesheet" href="/styles.css" />
-<meta pagetype-post />
-<style>
-    body {
-        overflow-x: hidden;
-    }
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="/background.css" />   
+        <title>Lily's Site</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" pageType="blog"/>
+        <style>
     img {
-        max-width: 90vw;
+        max-width: 90%;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
     }
     h1 {
         position: sticky;
@@ -23,19 +29,28 @@
         margin-block-start: 10px;
         margin-block-end: 10px;
     }
-
-    .backbt {
-        width: fit-content !important;
-        position: sticky;
-        top: 4px;
-        left: 100%;
-        margin-left: auto;
-        z-index: 99999 !important;
+    blockquote{
+        all:unset;
+        display: block;
+        margin-block: 1em;
+        padding-block: 10px;
+        padding-inline: 40px;
+        background: rgba(255,255,255,0.5);
+    }
+    .bqicon{
+        margin-left: -20px;
+        margin-right: 20px;
+        font-size: 1.2em;
     }
 </style>
-<b style="font-weight: bold; display: inline-block; vertical-align: bottom"
-    >Link to post:</b
->
-<textarea readonly>
-<!--#echo var="REQUEST_SCHEME" -->://<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/index.html?<!--#echo var="DOCUMENT_URI" -->#blog</textarea
->
+        <meta disable-scrolling hearts-bg root-page center-page-contents pageType=blog/>
+    </head>
+
+    <body>
+        <main class="draggable">
+            <span class="title">Lily's Site</span>
+            <div class="tabbar">
+                <!--#include virtual="/nav.html" --> 
+            </div>
+            <div class="win-content">
+                <div class="area">

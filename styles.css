@@ -1,4 +1,3 @@
-@import url(background.css);
 
 * {
     box-sizing: border-box;
@@ -16,28 +15,19 @@
     --w9xBorderC-tl: #ffffff50;
     --w9xBorder-Thickness: 2px;
 }
-
-html:has(meta[hearts-bg]) body {
-    background-color: #fed7e5;
+html {
+    max-height: 100vh;
+    max-width: 100vh;
+    overflow: hidden;
+    margin: 0px;
 }
-
 body {
-    margin: 0;
     font-family: system-ui, sans-serif;
     color: black;
-}
-
-html:has(meta[root-page]) body {
+    width: 100vw;
+    margin: 0px;
     height: 100vh;
-}
-
-html:has(meta[center-page-contents]) body {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
+    overflow: auto;
 }
 
 meta[disable-scrolling] {
@@ -46,22 +36,21 @@ meta[disable-scrolling] {
 
 main,
 dialog {
-    width: min(700px, 90vw);
-    height: 90vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90vw;
+    max-width: 700px;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
     background-color: #febcd3;
     padding: 5px;
-    /* box-shadow: var(--win9xShadow); */
     border: var(--w9xBorder-Thickness) outset;
     border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br)
         var(--w9xBorderC-tl);
-    outline: 1px solid gray;
+    outline: 1px solid rgba(170, 170, 170, 0.3);
     display: flex;
     flex-direction: column;
-    position: absolute;
-    resize: both;
-    overflow: hidden;
 }
 dialog:not([open]) {
     display: none !important;
@@ -110,25 +99,10 @@ dialog .title {
     margin-bottom: 10px;
 }
 
-main .title::after,
-dialog .title:after {
-    display: flex;
-    content: "×";
-    height: 1.2em;
-    aspect-ratio: 1 / 1;
-    background-color: #fed7e5;
-    align-items: center;
-    justify-content: center;
-    color: #50011d;
-    float: right;
-    /* box-shadow: var(--win9xShadow); */
-    border: var(--w9xBorder-Thickness) outset;
-    border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br)
-        var(--w9xBorderC-tl);
-}
-
 button,
-html:has([rows-buttons]) table:not(.normal-table) tr {
+html:has([rows-buttons]) table:not(.normal-table) tr,
+input[type="submit"],
+select {
     /* box-shadow: var(--win9xShadow); */
     border: var(--w9xBorder-Thickness) outset;
     border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br)
@@ -142,7 +116,9 @@ html:has([rows-buttons]) table:not(.normal-table) tr {
 button:active,
 html:has([rows-buttons]) table:not(.normal-table) tr:active,
 .tab.active,
-a.button:active {
+a.button:active,
+input[type="submit"]:active,
+select:active {
     color: #fed7e5;
     background-color: #fb0e61;
 }
@@ -160,9 +136,8 @@ a.button:active {
     height: 2.3em;
     background-color: #fed7e5;
     color: #50011d;
-    display: inline-flex;
+    display: inline-block;
     align-items: center;
-    text-decoration: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin: 0px;
@@ -170,6 +145,10 @@ a.button:active {
     font-size: 0.9em;
     padding-left: 10px;
     padding-right: 10px;
+}
+a:has(.tab){
+    text-decoration: none !important;
+    
 }
 
 a.button {
@@ -241,9 +220,9 @@ textarea {
     width: 100%;
 }
 
-body:has(#about:target) [href="#about"],
-body:has(#blog:target) [href="#blog"],
-body:has(#contact:target) [href="#contact"] {
+html:has(meta[pagetype=about]) [href="/"] button,
+html:has(meta[pagetype=blog]) [href="/blog"] button,
+html:has(meta[pagetype=contact]) [href="#contact"] button {
     color: #fed7e5;
     background-color: #fb0e61;
     font-weight: bold;

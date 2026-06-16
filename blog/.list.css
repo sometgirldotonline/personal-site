@@ -5,14 +5,16 @@ html:not(:has(meta[sub-dir])) table:not(.normal-table) tr:nth-child(3), table:no
 .indexcolsize {
     display: none !important;
 }
-
-details {
+#indexlist, tr, tbody {
+  display: block !important;
+}
+#filters {
+    display:block;
     background-color: #fed7e5;
     height: fit-content !important;
     padding: 10px;
     overflow: visible;
     height: fit-content !important;
-    width: 70vw;
     margin-bottom: 10px;
     align-items: center;
     border: var(--w9xBorder-Thickness) outset;
@@ -28,7 +30,10 @@ table a{
 table a:active{
     color: #fed7e5
 }
-table:not(.normal-table) tr {
+table#indexlist{
+    width: 100%;
+}
+table#indexlist tr {
     display: block;
     gap: 8px;
     height: fit-content !important;
@@ -36,7 +41,7 @@ table:not(.normal-table) tr {
     overflow: visible;
     height: fit-content !important;
     min-height: 70px;
-    width: 70vw;
+    width: 100% !important;
     margin-bottom: 10px;
     align-items: center;
     /* Keeps text aligned with the icon center */

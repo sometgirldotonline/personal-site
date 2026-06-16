@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="background.css" />
   <title>Lily's Site</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <meta disable-scrolling hearts-bg root-page center-page-contents>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="draggable.js"></script>
+  <meta disable-scrolling hearts-bg root-page center-page-contents pageType=about>
 </head>
 
 <body>
   <main class="draggable">
-    <span class="title dragger">Lily's Site</span>
-    <div class="tabbar"><a class="tab" href="#about">About Me</a><a class="tab" href="#blog">Blog</a><a class="tab"
-        href="#contact" title="Because you want to talk to me for some reason?">Contact</a>
+    <span class="title">Lily's Site</span>
+    <div class="tabbar">
+       <!--#include virtual="/nav.html" --> 
     </div>
     <div class="win-content">
-      <div class="area" id="about">
+      <div class="area">
         <p>Haii, I'm <i>Lily</i>, I'm an awfully stereotypical transfem, here's a list of my hobbies
         </p>
         <ul>
@@ -96,47 +96,8 @@
           </a><br>
           <small><i>i got ddossed recently lmao, mostly botnet traffic it seemed</i></small>
       </div>
-      <div id="blog" class="area">
-        <!--#if expr="-n v('QUERY_STRING')" -->
-        <iframe name="blogframe" src="//<!--#echo var="HTTP_HOST" -->:<!--#echo var="SERVER_PORT" -->/<!--#echo var="QUERY_STRING" -->"
-          class="areaframe" frameborder="0"></iframe>
-        <!--#else -->
-        <iframe  name="blogframe" src="blog" class="areaframe" frameborder="0"></iframe>
-        <!--#endif -->
-        </center>
-      </div>
-      <div id="contact" class="area">
-        <H1>Contact me!</H1>
-        <h4>Emails</h4>
-        <textarea name="email" readonly id="">
-lily@sometgirl.online
-sometgirl.online@proton.me
-        </textarea>
-        <h4>Also these socials</h4>
-        <a href="https://bsky.app/profile/sometgirl.online"><img src="site-icons/bsky.png" alt="Bluesky Logo">
-          @sometgirl.online on BlueSky</a><br>
-      </div>
-    </div>
-    <div class="buttons">
-        <a href="/blog/" target="blogframe" class="button backbt"><img src="/icons/back.gif" alt="back"
-                    style="margin-right: 5px;"> Back to post list.</a>
     </div>
   </main>
-  <!-- Maybe another day, my beloved -->
-  <!-- <main id="blog-viewer" class=draggable>
-    <span class="title dragger">Blog Post Viewer</span>
-    <div class="win-content">
-      <div class="area">
-        <iframe class="areaframe" name="content-frame" frameborder="0"
-          srcdoc="<h1>Click a post in the main window to start</h1>"></iframe>
-      </div>
-    </div>
-  </main> -->
-  <div class="taskbar">
-    <!--#config timefmt="%I:%M %p" -->
-    <span class="clock"><img src="site-icons/98Cal.png" alt=""><img src="site-icons/98Sound.png"
-        alt=""><!--#echo var="DATE_LOCAL" --></span>
-  </div>
 </body>
 
 </html>

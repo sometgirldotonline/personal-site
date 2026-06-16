@@ -13,13 +13,13 @@
     <h3 id="please-dont-build-your-sites-like-this"><i>Please, don&#39;t build your sites like this.</i></h3>
     <i><b>Originally posted: </b>2025-02-24</i>
     <blockquote>
-        <p>warning: some profanity is used in this post</p>
+        <p><span class=bqicon>⚠️</span>warning: some profanity is used in this post</p>
     </blockquote>
     <p>I was messing around with NGL.LINK and noticed a little counter:
         <br>
         <img src="../blog-assets/NGL-Fake-Counter/ngl-screenshot.png"
             alt="Webpage showing a checkbox and &quot;Sent! 👇 532 people just tapped the button 👇; Button labeled: Get your own messages; Hyperlink labeled Send another Message&quot; ">
-        <br>This counter intrigued me, so i popped open inspector, and what do you fucking know, there's no data.
+        This counter intrigued me, so i popped open inspector, and what do you fucking know, there's no data.
         This is the code snippet we are interested in:
     </p>
     <pre class="language-js"
@@ -36,7 +36,7 @@
         variable) by <code>Math.floor(Math.random() * 5) - 1</code>, what exactly does this mean? First, we run
         Math.Random (order of operations and all that jazz), this throws an output like this:<br>
         <img src="../blog-assets/NGL-Fake-Counter/mathrandom.png"
-            alt="Math.random in firefox console, yielded 0.19502641876331384"><br>
+            alt="Math.random in firefox console, yielded 0.19502641876331384">
         We then multiply that by 5, so it atleast, some of the time is at-least 1, we then floor it which basically
         strips away the decimal values, and then subtract by one at some points, which could theoretically be dangerous
         if it ends up being a 0.9999 or whatever which means it would take an item away, finally we write this value
@@ -50,12 +50,12 @@
         i had to <code>void</code> the trash.</p>
     <h3 id="nodejs">NodeJS</h3>
     <p><img src="../blog-assets/NGL-Fake-Counter/nodejs-test.png"
-            alt="Script in nodeJS showing it switching between -1, 0, 2, 3 when using random and a bit of math."><br>
+            alt="Script in nodeJS showing it switching between -1, 0, 2, 3 when using random and a bit of math.">d
         Node seems to have a habit of rolling zeros and negative values, which when negatives are rolled, it would seem
         like a user &quot;unclicked&quot; the button.</p>
     <h3 id="firefox">Firefox</h3>
     <p><img src="../blog-assets/NGL-Fake-Counter/fftest.png"
-            alt="Same script in firefox only yields positive, nonzero numbers"><br></p>
+            alt="Same script in firefox only yields positive, nonzero numbers"></p>
     <p>Ok, but WHY THE FUCK IS NODE ACTING DIFFERENT TO FIREFOX???
         Now I gotta test it in Chrome &gt;:3</p>
     <h2 id="addendum-2-electric-boogaloo-2026-02-23">Addendum 2: Electric Boogaloo (2026-02-23)</h2>
