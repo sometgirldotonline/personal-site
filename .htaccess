@@ -2,3 +2,4 @@ AddType text/html .html
 AddOutputFilter INCLUDES .html
 Options +Indexes +Includes
 IndexOptions FancyIndexing HTMLTable
+ErrorDocument 404 "/404.html"
