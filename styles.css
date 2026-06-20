@@ -1,4 +1,7 @@
-
+body{
+    background-image: url("/bg.png");
+    background-size: 50px;
+}
 * {
     box-sizing: border-box;
     image-rendering: pixelated;
@@ -49,7 +52,7 @@ dialog {
     border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br)
         var(--w9xBorderC-tl);
     outline: 1px solid rgba(170, 170, 170, 0.3);
-    display: flex;
+    display: block;
     flex-direction: column;
 }
 dialog:not([open]) {
@@ -100,7 +103,7 @@ dialog .title {
 }
 
 button,
-html:has([rows-buttons]) table:not(.normal-table) tr,
+table#indexlist tr,
 input[type="submit"],
 select {
     /* box-shadow: var(--win9xShadow); */
@@ -145,10 +148,10 @@ select:active {
     font-size: 0.9em;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 5px;
 }
-a:has(.tab){
+a:has(.tab) {
     text-decoration: none !important;
-    
 }
 
 a.button {
@@ -195,6 +198,7 @@ textarea[readonly] {
     width: 100%;
     padding: 10px;
     height: 100%;
+    overflow-x:hidden;
 }
 
 .huh {
@@ -220,9 +224,9 @@ textarea {
     width: 100%;
 }
 
-html:has(meta[pagetype=about]) [href="/"] button,
-html:has(meta[pagetype=blog]) [href="/blog"] button,
-html:has(meta[pagetype=contact]) [href="#contact"] button {
+body.page-about [href="/"],
+body.page-blog [href="/blog"],
+body.page-contact [href="/contact.html"] {
     color: #fed7e5;
     background-color: #fb0e61;
     font-weight: bold;
