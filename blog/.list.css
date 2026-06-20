@@ -1,15 +1,67 @@
+    img {
+        max-width: 90%;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+    }
+    h1 {
+        position: sticky;
+        top: -2px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        z-index: 0;
+        background-color: #febcd3;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-block-start: 10px;
+        margin-block-end: 10px;
+    }
+    blockquote{
+        all:unset;
+        display: block;
+        margin-block: 1em;
+        padding-block: 10px;
+        padding-inline: 40px;
+        background: rgba(255,255,255,0.5);
+    }
+    .bqicon{
+        margin-left: -20px;
+        margin-right: 20px;
+        font-size: 1.2em;
+    }
 .indexhead,
 .indexbreakrow,
-address,
-html:not(:has(meta[sub-dir])) table:not(.normal-table) tr:nth-child(3), table:not(.normal-table) tr:has(hr), table:not(.normal-table) tr:has(img[src="/icons/blank.gif"]),
-.indexcolsize {
+body.root-page table#indexlist tbody tr:nth-child(3),
+address{
     display: none !important;
 }
-#indexlist, tr, tbody {
-  display: block !important;
+table#indexlist tbody tr:nth-child(3) td.indexcolname{
+    top:12px;
+    position: relative;
+}
+table#indexlist tbody tr:nth-child(3) img{
+    height: 2.5ch !important;
+}
+table#indexlist tbody tr:nth-child(3) .indexcollastmod,table#indexlist tbody tr:nth-child(3) .indexcoldesc{
+    display: none !important;
+}
+table#indexlist tbody tr:nth-child(3){
+    height: 48px !important;
+    min-height: 0px;
+}
+table#indexlist tbody tr:nth-child(3) .indexcolname a{
+    padding-bottom: 0px;
+}
+#indexlist,
+tbody {
+    display: block !important;
 }
 #filters {
-    display:block;
+    display: block;
     background-color: #fed7e5;
     height: fit-content !important;
     padding: 10px;
@@ -18,19 +70,17 @@ html:not(:has(meta[sub-dir])) table:not(.normal-table) tr:nth-child(3), table:no
     margin-bottom: 10px;
     align-items: center;
     border: var(--w9xBorder-Thickness) outset;
-    border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br) var(--w9xBorderC-tl);
+    border-color: var(--w9xBorderC-tl) var(--w9xBorderC-br) var(--w9xBorderC-br)
+        var(--w9xBorderC-tl);
 }
-form{
+form {
     margin-block-end: 0;
 }
-table a{
+table a {
     color: #000;
     text-decoration: none;
 }
-table a:active{
-    color: #fed7e5
-}
-table#indexlist{
+table#indexlist {
     width: 100%;
 }
 table#indexlist tr {
@@ -61,29 +111,34 @@ table#indexlist tr {
 
 .indexcolname {
     display: inline-block;
-
 }
 
 .indexcolname a {
-    margin-top: -13px;
-    position: absolute;
+    margin-top: -15px;  
+    position: relative;
+    top: -40px;
+    left: 40px;
     width: 70vw;
-    padding-top: 11px;
+    padding-top: 12px;
     padding-left: 58px;
     padding-bottom: 35px;
     margin-left: -50px;
-    display: block;
+    display: inline-block;
     z-index: 9999;
 }
 
-.indexcoldesc {
+.indexcoldesc{
+    position: relative;
+    top: -10px;
+    margin-top: -65px;
     display: block;
-    margin-top: 20px;
     padding-left: 48px;
-
 }
 
 .indexcollastmod {
+        position: relative;
+    top: -40px;
+  margin-top: -55px;
     text-align: right;
     float: right;
     translate: 0px -5px;
