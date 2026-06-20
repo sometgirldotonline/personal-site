@@ -1,2 +1,16 @@
-My personal site. Built without PHP, and with minimal JS (just for dragging the window). I wanted to see how far I could push built in stuff like SSI and HTACCESS. Turns out, it's pretty far.
-There was some light ai use for debugging the SSI but it was as lost as I am and i gave up quickly and went to reading the very lacking docs. Also helped me figure out the differences in environment between apache on my laptop and on my server.
+# personal-site
+My personal website
+# "tech stack"
+the Garbage stack:
+- apache
+- no js
+- shitty css
+- apache ssi 🤑
+- htaccess
+
+# AI Use
+AI used to:
+- Debug SSI (nobody wants to debug ssi)
+- Occasional CSS debugging
+- Figure out what shit i need to eventually change to work on old browsers
+- Find differences between Laptop's Environment and Server's Environment for Apache
