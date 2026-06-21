@@ -1,5 +1,8 @@
 # personal-site
 My personal website
+> [!NOTE]
+> **For horizons reviewers:** ignore the thing about some hours coming from blog posts, i misinterpreted the display of the hours as though i had done `n` hours on top of my previous submission and not `n` total hours
+
 # "tech stack"
 the Garbage stack:
 - apache
