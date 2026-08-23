@@ -251,11 +251,11 @@ body:has(#blog:target) .backbt {
     display: block !important;
 }
 
-iframe:not(.areaframe) {
+/* iframe:not(.areaframe) {
     position: absolute;
     bottom: 0;
     left: 0;
-}
+} */
 
 .areaframe {
     width: 100%;
