@@ -1,7 +1,7 @@
 <html lang="en"><head>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="background.css">
-  <title>404 Page Not Found | Lily's Site</title>
+  <title>Currency Converter</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <meta disable-scrolling="" hearts-bg="" root-page="" center-page-contents="" pagetype="404">
