@@ -13,7 +13,7 @@
 
     <div class="win-content">
       <div class="area">
-        <h1>Currency Conversion for: <? echo $_GET['aud'] ?></h1>
+        <h1>Currency Conversion for: <?php echo $_GET['aud'] ?></h1>
         <p>This page opened in a new tab, to get back to where you were, close this tab.</p>
         <table>
             <thead><td>Currency</td><td>Conversion</td></thead>
