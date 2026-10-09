@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <meta disable-scrolling="" hearts-bg="" root-page="" center-page-contents="" pagetype="404">
 </head>
-<tr?php
+<?php
 $url = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/aud.json';
 $jsonVeri = file_get_contents($url);
 $data = json_decode($jsonVeri, true);
