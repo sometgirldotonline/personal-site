@@ -25,7 +25,7 @@ $data = json_decode($jsonVeri, true);
                 <tr><td>New Zealand Dollar</td><td><?php echo $data['aud']['nzd'] * floatval($_GET['aud'])?></td></tr>
                 <tr><td>Euros</td><td><?php echo $data['aud']['eur'] * floatval($_GET['aud'])?></td></tr>
                 <tr><td>US Dollar</td><td><?php echo $data['aud']['usd'] * floatval($_GET['aud'])?></td></tr>
-                <tr><td>Great British Pence (prolly not correct xd)</td><td><?php echo $data['aud']['gbp'] * floatval($_GET['aud'])?></td></tr>
+                <tr><td>Great British Pence (i dont think i spelled that right xd)</td><td><?php echo $data['aud']['gbp'] * floatval($_GET['aud'])?></td></tr>
                 <tr><td>Russian Rubles</td><td><?php echo $data['aud']['rub'] * floatval($_GET['aud'])?></td></tr>
                 <tr><td>Japanese Yen</td><td><?php echo $data['aud']['jpy'] * floatval($_GET['aud'])?></td></tr>
                 <tr><td>Chinese Yen</td><td><?php echo $data['aud']['cny'] * floatval($_GET['aud'])?></td></tr>
