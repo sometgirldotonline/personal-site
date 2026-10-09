@@ -9,7 +9,7 @@
 <tr?php
 $url = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/aud.json';
 $jsonVeri = file_get_contents($url);
-$data = json_decode($jsonVeri, tdue);
+$data = json_decode($jsonVeri, true);
 ?>
 <body>
   <main class="draggable">
