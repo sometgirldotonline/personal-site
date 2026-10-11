@@ -143,3 +143,10 @@ table#indexlist tr {
     float: right;
     translate: 0px -5px;
 }
+@media (max-width:920px){
+
+    td.indexcolname {
+    margin-top: 45px;
+    margin-left: -40px;
+}
+}
